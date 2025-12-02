@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SECON 2026 — Конференция</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Конференция SECON 2026 — место встречи IT-специалистов.">
+  <meta property="og:title" content="SECON 2026">
+  <meta property="og:description" content="Конференция SECON 2026 — место встречи IT-специалистов.">
+  <style>
+
+    :root {
+  --primary: #007ACC; /* Глубокий синий как на постере */
+  --secondary: #1E88E5; /* Более светлый синий */
+  --accent: #2196F3; /* Акцентный синий */
+  --danger: #FF5252;
+  --text: #fff; /* Текст белым, как на тёмном фоне постера */
+  --light: #fff;
+  --gray: #212121; /* Тёмный фон, как в постере */
+  --border: #455A64;
+  --font-primary: 'Inter', sans-serif;
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      line-height: 1.5;
+      color: var(--text);
+      background-color: #fafafa;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+    }
+
+    /* Grid system */
+    .grid {
+      display: grid;
+      gap: var(--spacing-lg);
+    }
+
+    .grid-12 {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    .col-span-12 { grid-column: span 12; }
+    .col-span-6 { grid-column: span 6; }
+    .col-span-4 { grid-column: span 4; }
+    .col-span-3 { grid-column: span 3; }
+
+    @media (max-width: 768px) {
+      .grid-12 {
+        grid-template-columns: 1fr;
+      }
+      .col-span-12, .col-span-6, .col-span-4, .col-span-3 {
+        grid-column: 1;
+      }
+    }
+
+    /* Hero section */
+
+    .hero {
+        background: #212121; /* Тёмно-синий фон */
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAwIDEwMDAiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3hpZ2lvbi1tZWRpYS8xLjAvIiB4bGluazpjbGFzcz0icmFuZ2VtZW50OiAxLjAiPjxsaW5lIGhyZWY9IjAiIG1hcmtlci1pbD0iMCIgbWF0aD0iMCAwIiBmaWxsPSJibGFjayIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjEiIGhyZWY9IjAiIG1hcmtlci1wb2ludD0iMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLWxpbmU9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGxpbmUgZGF0YS10cmFuc2Zvcm09InRyYW5zbGF0ZChDMjAwLCMwKSIgaHJlZj0iMCIgbWF0aD0iMCAwIiBmaWxsPSJibGFjayIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjEiIGhyZWY9IjAiIG1hcmtlci1wb2ludD0iMCIgc3Ryb2tlLW9wYWNpdHk9IjAuMSIgc3Ryb2tlLWxpbmU9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+'); /* Сетка как на постере */
+        color: var(--light);
+        text-align: center;
+        padding: var(--spacing-xl) 0;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    
+.hero h1 {
+  font-size: 5rem; /* Увеличиваем размер */
+  font-weight: 900; /* Жирный шрифт */
+  text-shadow: 0 3px 10px rgba(0,0,0,0.5); /* Тень как на постере */
+  letter-spacing: 2px; /* Межбуквенное расстояние */
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 8px; /* Скругление как на постере */
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, var(--primary), var(--accent)); /* Градиент на кнопках */
+  box-shadow: 0 4px 15px rgba(0,123,204,0.5); /* Объёмная тень */
+}
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary {
+      background-color: var(--accent);
+      color: var(--light);
+    }
+
+    .btn-secondary {
+      background-color: var(--danger);
+      color: var(--light);
+    }
+
+    /* Sections */
+
+section {
+  padding: 100px 0; /* Увеличиваем отступы для «воздуха» */
+  background-color: var(--gray); /* Тёмный фон секций */
+  position: relative; /* Для возможных псевдоэлементов */
+  overflow: hidden; /* Скрываем переполнение, если есть анимации */
+}
+
+/* Добавим лёгкую рамку-разделитель снизу для визуального отделения секций */
+section:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 50px auto; /* Отступы сверху/снизу от линии */
+}
+
+
+h2 {
+  color: var(--light); /* Белый текст */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4); /* Тень для заголовков */
+}
+
+    p {
+      font-size: 1rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    /* About section */
+    .about ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-md);
+    }
+
+    .about li {
+
+      padding: var(--spacing-md) var(--spacing-lg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      min-width: 200px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .about img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      margin-top: var(--spacing-lg);
+      box-shadow: var(--shadow);
+    }
+
+    /* Program section */
+    .schedule {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-md);
+    }
+
+    .day {
+      background-color: var(--gray);
+      padding: var(--spacing-md);
+      border-radius: var(--radius);
+      text-align: center;
+      font-weight: 600;
+      transition: transform 0.15s ease;
+    }
+
+    .day:hover {
+      transform: scale(1.03);
+    }
+
+    /* Speakers section */
+    .speakers .grid {
+      justify-items: center;
+    }
+
+    .speaker-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      max-width: 300px;
+      transition: transform 0.15s ease;
+    }
+
+    .speaker-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .speaker-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: var(--spacing-sm);
+      border: 3px solid var(--primary);
+    }
+
+    .speaker-card h3 {
+      font-size: 1.1rem;
+      margin: var(--spacing-xs) 0;
+      color: var(--primary);
+    }
+
+    .speaker-card p {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #007ACC;
+    }
+
+    /* Partners section */
+    .partner-logo {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--spacing-md)    }
+
+
+    .partner-logo img {
+      width: 120px;
+      height: auto;
+      margin: var(--spacing-xs);
+      filter: grayscale(100%);
+      transition: filter 0.2s ease, transform 0.15s ease;
+    }
+
+    .partner-logo img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+
+    /* Location section */
+    .location iframe {
+      border: none;
+      width: 100%;
+      height: 400px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-top: var(--spacing-md);
+    }
+
+    .location p {
+      text-align: center;
+      margin-top: var(--spacing-sm);
+      color: #666666;
+    }
+
+    /* FAQ section */
+    .faq details {
+      margin: var(--spacing-md) 0;
+      padding: var(--spacing-sm);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .faq summary {
+      font-weight: 600;
+      color: var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq p {
+      margin-top: var(--spacing-sm);
+      color: #555;
+    }
+
+    .faq details[open] {
+      background-color: #212121;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #222;
+      color: var(--light);
+      padding: var(--spacing-xl) 0;
+      text-align: center;
+    }
+
+    .footer .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+      justify-items: center;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-sm);
+    }
+
+    .social a {
+      color: var(--light);
+      font-size: 1.2rem;
+      transition: color 0.2s ease;
+    }
+
+    .social a:hover {
+      color: var(--accent);
+    }
+
+    .footer a {
+      color: var(--light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin: 0 var(--spacing-sm);
+      transition: color 0.2s ease;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade {
+      animation: fadeIn 0.2s ease forwards;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      .schedule {
+        grid-template-columns: 1fr;
+      }
+
+      .speaker-card {
+        max-width: 100%;
+        margin: var(--spacing-sm) 0;
+      }
+
+      .partner-logo {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero-блок -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="animate-fade">SECON 2026</h1>
+      <p class="animate-fade">15–17 июня, Москва</p>
+      <div class="animate-fade" style="margin-top: var(--spacing-md);">
+        <button class="btn btn-primary">Купить билет</button>
+        <button class="btn btn-secondary">Оставить email</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- О конференции -->
+  <section class="about">
+    <div class="container">
+      <h2 class="animate-fade">О конференции</h2>
+      <ul class="animate-fade">
+        <li>3 дня интенсивного обучения</li>
+        <li>20+ спикеров</li>
+        <li>5 треков по разным темам</li>
+        <li>Нетворкинг и обмен опытом</li>
+      </ul>
+      <img src="conference.jpg" alt="Конференция SECON" class="animate-fade" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Программа -->
+  <section class="program">
+    <div class="container">
+      <h2 class="animate-fade">Программа</h2>
+      <div class="schedule animate-fade">
+        <div class="day">День 1: Основы фронтенда</div>
+        <div class="day">День 2: Бэкенд-разработка</div>
+        <div class="day">День 3: DevOps и тестирование</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Спикеры -->
+  <section class="speakers">
+    <div class="container">
+      <h2 class="animate-fade">Спикеры</h2>
+      <div class="grid grid-12 animate-fade">
+        <div class="col-span-4">
+          <div class="speaker-card">
+            <img src="speaker1.jpg" alt="Иван Петров">
+            <h3>Иван Петров</h3>
+            <p>Senior Developer, Google</p>
+            <p>Тема: «JavaScript в 2026 году»</p>
+          </div>
+        </div>
+        <div class="col-span-4">
+          <div class="speaker-card">
+            <img src="speaker2.jpg" alt="Анна Смирнова">
+            <h3>Анна Смирнова</h3>
+            <p>Lead Engineer, Yandex</p>
+            <p>Тема: «Искусственный интеллект в разработке»</p>
+          </div>
+        </div>
+        <div class="col-span-4">
+          <div class="speaker-card">
+            <img src="speaker3.jpg" alt="Дмитрий Козлов">
+            <h3>Дмитрий Козлов</h3>
+            <p>CTO, VK Tech</p>
+            <p>Тема: «Масштабирование IT-систем»</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Партнёры -->
+  <section class="partners">
+    <div class="container">
+      <h2 class="animate-fade">Партнёры</h2>
+      <div class="partner-logo animate-fade" style="margin-top: var(--spacing-md);">
+        <img src="partner1.png" alt="Партнёр 1">
+        <img src="partner2.png" alt="Партнёр 2">
+        <img src="partner3.png" alt="Партнёр 3">
+        <img src="partner4.png" alt="Партнёр 4">
+      </div>
+    </div>
+  </section>
+
+  <!-- Локация -->
+  <section class="location">
+    <div class="container">
+      <h2 class="animate-fade">Локация</h2>
+      <iframe 
+        src="https://yandex.ru/map-widget/v1/?ll=37.6176,55.7558&z=10"
+        title="Карта локации конференции"
+        loading="lazy"
+      ></iframe>
+      <p>Адрес: Москва, ул. Примерная, 123</p>
+      <p>Как добраться: метро «Примерное», 5 минут пешком</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2 class="animate-fade">FAQ</h2>
+      <details class="animate-fade">      <details class="animate-fade">
+        <summary>Когда начнётся конференция?</summary>
+        <p>15 июня 2026 года.</p>
+      </details>
+      <details class="animate-fade">
+        <summary>Сколько стоит билет?</summary>
+        <p>От 5 000 рублей.</p>
+      </details>
+      <details class="animate-fade">
+        <summary>Где пройдёт мероприятие?</summary>
+        <p>Москва, ул. Примерная, 123. Ближайшее метро — «Примерное», 5 минут пешком.</p>
+      </details>
+      <details class="animate-fade">
+        <summary>Можно ли получить счёт для юрлица?</summary>
+        <p>Да, отправьте запрос на почту info@secon2026.ru — мы выставим счёт с необходимыми документами.</p>
+      </details>
+      <details class="animate-fade">
+        <summary>Есть ли онлайн‑участие?</summary>
+        <p>Нет, конференция проводится только в очном формате.</p>
+      </details>
+    </div>
+  </section>
+
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="container">
+      <p>Контакты: +7 (495) 123‑45‑67, info@secon2026.ru</p>
+      <div class="social">
+        <a href="#" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" aria-label="VK">
+          <i class="fab fa-vk"></i>
+        </a>
+      </div>
+      <div>
+        <a href="#" class="footer-link">Оферта</a>
+        <a href="#" class="footer-link">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Шрифты и иконки (подключаем через CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    // Простая реализация плавной анимации при прокрутке
+    document.addEventListener('DOMContentLoaded', () => {
+      const fadeElements = document.querySelectorAll('.animate-fade');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      fadeElements.forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
