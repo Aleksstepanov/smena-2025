@@ -1,11 +1,11 @@
 <template>
   <Hero />
-  <About />
+ <!--  <About />
   <Program />
   <Speakers />
   <Sponsors />
   <FAQ />
-  <Footer />
+  <Footer /> -->
 </template>
 
 <script setup>
