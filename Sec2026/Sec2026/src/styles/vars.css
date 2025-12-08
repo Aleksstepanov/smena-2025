@@ -1,5 +1,4 @@
 :root {
-  /* Основные цвета */
   --primary: #2e3bff; /* Основной акцентный цвет (кнопки) */
   --secondary: #324c88; /* Вторичный цвет (рамки, элементы) */
   --background: #002447; /* Тёмный фон страницы */
@@ -7,19 +6,10 @@
   --accent-light: #3bd5ff; /* Светлый акцент */
   --accent-purple: #8176ed; /* Фиолетовый акцент */
   --gray-medium: #aaaaaa; /* Серый для теней/разделителей */
-
-  /* Градиенты */
   --gradient-start: #7a2cff; /* Начало градиента */
   --gradient-end: #2e3bff; /* Конец градиента */
-
-  /* Стилистика */
   --radius: 8px; /* Радиус скругления углов */
   --space: 16px; /* Базовый отступ между элементами */
-
-  /* Дополнительные переменные для удобства */
-  --primary-rgb: 46, 59, 255;
-  --accent-purple-rgb: 129, 118, 237;
-
-  /* Шрифты */
-  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-monda: "Monda", sans-serif;
+  --font-family-space: "Space Grotesk", sans-serif;
 }
