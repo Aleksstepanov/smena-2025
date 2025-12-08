@@ -10,4 +10,6 @@
   --gradient-end: #2e3bff; /* Конец градиента */
   --radius: 8px; /* Радиус скругления углов */
   --space: 16px; /* Базовый отступ между элементами */
+  --font-family-monda: "Monda", sans-serif;
+  --font-family-space: "Space Grotesk", sans-serif;
 }
