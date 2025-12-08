@@ -1,7 +1,7 @@
 <template>
   <Header />
-  <About />
   <HeroSection />
+  <About />
   <ProgramSection />
 </template>
 
