@@ -1,23 +1,6 @@
 <template>
-  <section class="event-fragment">
+  <section class="event-program">
     <div class="container">
-      <div class="section-header">
-        <div class="section-label">ПРОГРАММА</div>
-        <h2 class="section-title">Что вас ждёт</h2>
-        <p class="section-subtitle">
-          Присоединяйтесь к нашему мероприятию, чтобы узнать о последних тенденциях и инновациях в
-          отрасли
-        </p>
-      </div>
-
-      <div class="features">
-        <div class="feature" v-for="feature in features" :key="feature.id">
-          <div class="feature-icon">{{ feature.icon }}</div>
-          <h3 class="feature-title">{{ feature.title }}</h3>
-          <p class="feature-desc">{{ feature.desc }}</p>
-        </div>
-      </div>
-
       <div class="program-section">
         <h2 class="program-title">Программа мероприятия</h2>
 
@@ -49,27 +32,6 @@
 <script setup>
 import { ref } from 'vue'
 
-const features = ref([
-  {
-    id: 1,
-    icon: '🎤',
-    title: 'Выступления ведущих экспертов',
-    desc: 'Узнайте от лидеров отрасли о последних трендах и будущих направлениях развития',
-  },
-  {
-    id: 2,
-    icon: '🚀',
-    title: 'Презентации инновационных проектов',
-    desc: 'Откройте для себя передовые разработки и технологические решения',
-  },
-  {
-    id: 3,
-    icon: '🤝',
-    title: 'Обмен опытом и знаниями',
-    desc: 'Возможность обсудить идеи и поделиться опытом с коллегами',
-  },
-])
-
 const program = ref([
   {
     id: 1,
@@ -97,159 +59,56 @@ const program = ref([
 </script>
 
 <style scoped>
-.event-fragment {
+/* Основные стили */
+.event-program {
   padding: 100px 20px;
-  background: linear-gradient(
-    180deg,
-    var(--background),
-    color-mix(in srgb, var(--background) 95%, black)
-  );
+  background: #000;
   position: relative;
-  overflow: hidden;
-}
-
-.event-fragment::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 10% 20%, rgba(46, 59, 255, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(129, 118, 237, 0.05) 0%, transparent 40%);
-  z-index: 1;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  z-index: 2;
 }
 
-.section-header {
-  text-align: center;
-  margin-bottom: 80px;
-}
-
-.section-label {
-  font-size: 1rem;
-  color: var(--accent-light);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.section-title {
-  font-size: 3.5rem;
-  font-weight: 900;
-  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  margin-bottom: 20px;
-}
-
-.section-subtitle {
-  font-size: 1.5rem;
-  color: var(--accent-light);
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: calc(var(--space) * 2);
-  margin-bottom: 100px;
-}
-
-.feature {
-  background: rgba(0, 36, 71, 0.7);
-  border: 1px solid var(--secondary);
-  border-radius: calc(var(--radius) * 2);
-  padding: calc(var(--space) * 2);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.feature:hover {
-  transform: translateY(-10px);
-  border-color: var(--accent-light);
-  box-shadow: 0 20px 40px rgba(59, 213, 255, 0.1);
-}
-
-.feature::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.feature:hover::before {
-  opacity: 1;
-}
-
-.feature-icon {
-  font-size: 3rem;
-  margin-bottom: 25px;
-}
-
-.feature-title {
-  font-size: 1.5rem;
-  color: var(--text);
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-.feature-desc {
-  color: var(--gray-medium);
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
-
-.program-section {
-  margin-top: 80px;
-}
-
+/* Заголовок */
 .program-title {
-  font-size: 2.5rem;
-  color: var(--text);
+  font-size: 64px;
+  font-weight: 800;
+  color: #ffffff;
   text-align: center;
-  margin-bottom: 50px;
-  font-weight: 700;
+  margin-bottom: 60px;
 }
 
+/* Сетка дней */
 .program-days {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: calc(var(--space) * 3);
+  display: flex;
+  gap: 40px;
+  justify-content: center;
 }
 
+/* Карточка дня */
 .program-day {
-  background: rgba(0, 36, 71, 0.7);
-  border: 1px solid var(--secondary);
-  border-radius: calc(var(--radius) * 2);
+  background: #111111;
+  border: 1px solid #333333;
+  border-radius: 20px;
   overflow: hidden;
+  width: 100%;
+  max-width: 580px;
   transition: all 0.3s ease;
 }
 
 .program-day:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(46, 59, 255, 0.1);
-  border-color: var(--accent-light);
+  border-color: #444444;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* Шапка дня */
 .day-header {
-  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-  color: var(--text);
+  background: #1b2f57;
+  color: #ffffff;
   padding: 25px 30px;
   display: flex;
   justify-content: space-between;
@@ -257,18 +116,18 @@ const program = ref([
 }
 
 .day-title {
-  font-size: 1.8rem;
+  font-size: 32px;
   font-weight: 700;
 }
 
 .day-date {
-  font-size: 1.2rem;
-  opacity: 0.9;
+  font-size: 18px;
   background: rgba(255, 255, 255, 0.1);
-  padding: 5px 15px;
-  border-radius: var(--radius);
+  padding: 8px 16px;
+  border-radius: 10px;
 }
 
+/* События */
 .day-events {
   padding: 20px 0;
 }
@@ -276,7 +135,7 @@ const program = ref([
 .event-item {
   display: flex;
   padding: 20px 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #222222;
   transition: all 0.3s ease;
 }
 
@@ -285,48 +144,40 @@ const program = ref([
 }
 
 .event-item:hover {
-  background: rgba(59, 213, 255, 0.05);
+  background: rgba(27, 47, 87, 0.1);
 }
 
+/* Выделенные события */
 .event-item.highlight {
-  background: linear-gradient(90deg, rgba(46, 59, 255, 0.1), transparent);
-  border-left: 3px solid var(--accent-light);
+  background: rgba(27, 47, 87, 0.15);
+  border-left: 4px solid #1b2f57;
 }
 
 .event-time {
   font-weight: 600;
-  color: var(--accent-light);
-  min-width: 140px;
-  font-size: 1.1rem;
+  color: #568dfc;
+  min-width: 200px;
+  font-size: 18px;
 }
 
 .event-name {
-  color: var(--text);
+  color: #ffffff;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 18px;
 }
 
-/* Анимации для появления элементов */
-.feature,
+/* Анимации */
 .program-day {
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
 }
 
-.feature:nth-child(1) {
+.program-day:nth-child(1) {
   animation-delay: 0.2s;
 }
-.feature:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.feature:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.program-day:nth-child(1) {
-  animation-delay: 0.8s;
-}
+
 .program-day:nth-child(2) {
-  animation-delay: 1s;
+  animation-delay: 0.4s;
 }
 
 @keyframes fadeInUp {
@@ -340,35 +191,37 @@ const program = ref([
   }
 }
 
-/* Адаптив */
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .program-days {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .program-day {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
-  .event-fragment {
+  .event-program {
     padding: 60px 20px;
   }
 
-  .section-title {
-    font-size: 2.5rem;
-  }
-
-  .section-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .features {
-    grid-template-columns: 1fr;
-    gap: var(--space);
-  }
-
-  .program-days {
-    grid-template-columns: 1fr;
-    gap: calc(var(--space) * 2);
+  .program-title {
+    font-size: 48px;
+    margin-bottom: 40px;
   }
 
   .day-header {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     text-align: center;
     padding: 20px;
+  }
+
+  .day-title {
+    font-size: 28px;
   }
 
   .event-item {
@@ -379,20 +232,26 @@ const program = ref([
 
   .event-time {
     min-width: auto;
+    font-size: 16px;
+  }
+
+  .event-name {
+    font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
-  .section-title {
-    font-size: 2rem;
+  .program-title {
+    font-size: 36px;
   }
 
-  .feature {
-    padding: calc(var(--space) * 1.5);
+  .day-title {
+    font-size: 24px;
   }
 
-  .feature-title {
-    font-size: 1.3rem;
+  .day-date {
+    font-size: 16px;
+    padding: 6px 12px;
   }
 }
 </style>
