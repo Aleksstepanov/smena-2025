@@ -16,7 +16,7 @@
 
 <script setup>
 import boggart from '@/assets/sponsors/boggart.png'
-import dmt from '@/assets/sponsors/dmt.png'
+import dmt from '@/assets/sponsors/dmtlogo.png'
 import opensolutions from '@/assets/sponsors/opensolutions.png'
 import infotecs from '@/assets/sponsors/infotecs.png'
 import elsoft from '@/assets/sponsors/elsoft.png'
