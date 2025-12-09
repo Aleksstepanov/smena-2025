@@ -2,6 +2,7 @@
   <Header />
   <HeroSection />
   <About />
+  <Map />
   <FAQ />
   <ProgramSection />
 </template>
@@ -12,6 +13,7 @@ import About from './sections/About.vue'
 import ProgramSection from './sections/ProgramSection.vue'
 import Header from './sections/Header.vue'
 import FAQ from './sections/FAQ.vue'
+import Map from './sections/Map.vue'
 //import FAQ from './sections/FAQ.vue'
 //import Header from './sections/Header.vue'
 //import About from './sections/About.vue'
