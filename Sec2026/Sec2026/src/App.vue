@@ -2,9 +2,9 @@
   <Header />
   <HeroSection />
   <About />
+  <ProgramSection />
   <Map />
   <FAQ />
-  <ProgramSection />
 </template>
 
 <script setup>
