@@ -3,6 +3,7 @@
   <HeroSection />
   <About />
   <ProgramSection />
+  <SpeakersSection />
   <Map />
   <FAQ />
 </template>
@@ -12,6 +13,7 @@ import HeroSection from './sections/HeroSection.vue'
 import About from './sections/About.vue'
 import ProgramSection from './sections/ProgramSection.vue'
 import Header from './sections/Header.vue'
+import SpeakersSection from './sections/SpeakersSection.vue'
 import FAQ from './sections/FAQ.vue'
 import Map from './sections/Map.vue'
 //import FAQ from './sections/FAQ.vue'
