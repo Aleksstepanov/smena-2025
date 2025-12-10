@@ -3,11 +3,11 @@
   <HeroSection />
   <About />
   <ProgramSection />
-  <SponsorsSection />
-  <FooterSection />
   <SpeakersSection />
   <Map />
+  <SponsorsSection />
   <FAQ />
+  <FooterSection />
 </template>
 
 <script setup>
@@ -18,12 +18,6 @@ import Header from './sections/Header.vue'
 import SpeakersSection from './sections/SpeakersSection.vue'
 import FAQ from './sections/FAQ.vue'
 import Map from './sections/Map.vue'
-//import FAQ from './sections/FAQ.vue'
-//import Header from './sections/Header.vue'
-//import About from './sections/About.vue'
-//import Program from './sections/Program.vue'
-//import Speakers from './sections/Speakers.vue'
-//import Sponsors from './sections/Sponsors.vue'
-//import FAQ from './sections/FAQ.vue'
-//import Footer from './sections/Footer.vue'
+import SponsorsSection from './sections/SponsorsSection.vue'
+import FooterSection from './sections/FooterSection.vue'
 </script>
