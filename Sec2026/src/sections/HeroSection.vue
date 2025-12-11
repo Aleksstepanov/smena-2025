@@ -15,7 +15,7 @@
           <div class="event-info">
             <p class="event-date">1–2 февраля в&nbsp;12:00</p>
             <p class="event-location">
-              Пенза, ул. Попова 66 к.1 Центр “Ключевский”
+              Пенза, ул. Попова 66 к.1 Центр "Ключевский"
             </p>
           </div>
 
@@ -72,10 +72,10 @@ function update() {
 
   if (diff < 0) return;
 
-  days.value = Math.floor(diff / 86400000).toString();
-  hours.value = Math.floor((diff / 3600000) % 24).toString();
-  minutes.value = Math.floor((diff / 60000) % 60).toString();
-  seconds.value = Math.floor((diff / 1000) % 60).toString();
+  days.value = Math.floor(diff / 86400000).toString().padStart(2, "0");
+  hours.value = Math.floor((diff / 3600000) % 24).toString().padStart(2, "0");
+  minutes.value = Math.floor((diff / 60000) % 60).toString().padStart(2, "0");
+  seconds.value = Math.floor((diff / 1000) % 60).toString().padStart(2, "0");
 }
 
 onMounted(() => {
@@ -87,8 +87,8 @@ onMounted(() => {
 <style scoped>
 /* Общий фон секции */
 .hero {
-  padding-top: 120px;
-  padding-bottom: 80px;
+  padding-top: 80px;
+  padding-bottom: 60px;
   background: #000;
   position: relative;
   overflow: hidden;
@@ -97,45 +97,64 @@ onMounted(() => {
 /* Основная сетка */
 .hero-grid {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
   gap: 40px;
 }
 
 /* Левая часть */
 .hero-left {
-  width: 60%;
+  width: 100%;
+  order: 2;
+}
+
+/* Правая часть */
+.hero-right {
+  width: 100%;
+  order: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 350px;
+  opacity: 0.9;
 }
 
 /* Заголовки */
 .hero-title {
-  font-size: 64px;
+  font-size: 42px;
   font-weight: 800;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
 .hero-subtitle {
-  font-size: 58px;
+  font-size: 32px;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 /* Кнопки */
 .hero-buttons {
   display: flex;
-  gap: 20px;
-  margin-bottom: 40px;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
 }
 
 .btn {
-  padding: 12px 34px;
-  font-size: 18px;
-  border-radius: 14px;
+  padding: 16px 20px;
+  font-size: 16px;
+  border-radius: 12px;
   font-weight: 500;
   border: none;
   cursor: pointer;
+  width: 100%;
+  text-align: center;
 }
 
 .btn-gray {
@@ -151,59 +170,182 @@ onMounted(() => {
 /* Дата и место */
 .event-info {
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .event-date {
   color: white;
   font-size: 18px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .event-location {
   color: #568dfc;
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 /* Таймер */
 .countdown {
   display: flex;
   align-items: center;
-  gap: 35px;
+  justify-content: center;
+  gap: 20px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .cd-item {
   text-align: center;
+  min-width: 60px;
 }
 
 .cd-value {
   color: white;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 700;
+  line-height: 1;
 }
 
 .cd-label {
   color: white;
-  font-size: 18px;
+  font-size: 14px;
+  margin-top: 4px;
 }
 
 .cd-divider {
   width: 1px;
-  height: 46px;
+  height: 36px;
   background: white;
   opacity: 0.6;
+  display: none;
 }
 
-/* Правая часть */
-.hero-right {
-  width: 40%;
-  display: flex;
-  justify-content: center;
+/* Десктопная версия */
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+  
+  .hero-grid {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  
+  .hero-left {
+    width: 60%;
+    order: 1;
+  }
+  
+  .hero-right {
+    width: 40%;
+    order: 2;
+  }
+  
+  .hero-image {
+    max-width: 520px;
+  }
+  
+  .hero-title {
+    font-size: 64px;
+    text-align: left;
+  }
+  
+  .hero-subtitle {
+    font-size: 58px;
+    text-align: left;
+  }
+  
+  .hero-buttons {
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .btn {
+    width: auto;
+    padding: 12px 34px;
+    font-size: 18px;
+  }
+  
+  .event-info {
+    text-align: left;
+  }
+  
+  .event-date {
+    font-size: 18px;
+  }
+  
+  .event-location {
+    font-size: 18px;
+  }
+  
+  .countdown {
+    justify-content: flex-start;
+    gap: 35px;
+    flex-wrap: nowrap;
+  }
+  
+  .cd-item {
+    min-width: auto;
+  }
+  
+  .cd-value {
+    font-size: 36px;
+  }
+  
+  .cd-label {
+    font-size: 18px;
+  }
+  
+  .cd-divider {
+    display: block;
+  }
 }
 
-.hero-image {
-  width: 100%;
-  max-width: 520px;
-  opacity: 0.9;
+/* Планшеты */
+@media (min-width: 480px) and (max-width: 767px) {
+  .hero-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .countdown {
+    gap: 25px;
+  }
+  
+  .cd-divider {
+    display: block;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 359px) {
+  .hero-title {
+    font-size: 36px;
+  }
+  
+  .hero-subtitle {
+    font-size: 28px;
+  }
+  
+  .cd-value {
+    font-size: 28px;
+  }
+  
+  .cd-label {
+    font-size: 12px;
+  }
+  
+  .countdown {
+    gap: 15px;
+  }
 }
 </style>
