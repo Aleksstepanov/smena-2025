@@ -14,6 +14,7 @@
 </template>
 
 <script>
+// @review лучше переписать на script setup
 export default {
   name: 'LocationSection',
 }

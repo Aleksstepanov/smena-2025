@@ -63,9 +63,9 @@ const days = ref("00");
 const hours = ref("00");
 const minutes = ref("00");
 const seconds = ref("00");
-
+// @review Я бы дату начала конференции вынес бы в общие константы, что то типа @/config/const/...
 const target = new Date("2026-02-01T12:00:00").getTime();
-
+// @review технически все ок, но в script setup лучше использовать arrow function (стрелочные)
 function update() {
   const now = Date.now();
   const diff = target - now;
@@ -77,7 +77,7 @@ function update() {
   minutes.value = Math.floor((diff / 60000) % 60).toString().padStart(2, "0");
   seconds.value = Math.floor((diff / 1000) % 60).toString().padStart(2, "0");
 }
-
+// @review технически все верно, однако при размонтировании компонента нужно очищать таймер - так мы избежим учетек памяти
 onMounted(() => {
   update();
   setInterval(update, 1000);
@@ -227,79 +227,79 @@ onMounted(() => {
     padding-top: 120px;
     padding-bottom: 80px;
   }
-  
+
   .hero-grid {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
   }
-  
+
   .hero-left {
     width: 60%;
     order: 1;
   }
-  
+
   .hero-right {
     width: 40%;
     order: 2;
   }
-  
+
   .hero-image {
     max-width: 520px;
   }
-  
+
   .hero-title {
     font-size: 64px;
     text-align: left;
   }
-  
+
   .hero-subtitle {
     font-size: 58px;
     text-align: left;
   }
-  
+
   .hero-buttons {
     flex-direction: row;
     gap: 20px;
   }
-  
+
   .btn {
     width: auto;
     padding: 12px 34px;
     font-size: 18px;
   }
-  
+
   .event-info {
     text-align: left;
   }
-  
+
   .event-date {
     font-size: 18px;
   }
-  
+
   .event-location {
     font-size: 18px;
   }
-  
+
   .countdown {
     justify-content: flex-start;
     gap: 35px;
     flex-wrap: nowrap;
   }
-  
+
   .cd-item {
     min-width: auto;
   }
-  
+
   .cd-value {
     font-size: 36px;
   }
-  
+
   .cd-label {
     font-size: 18px;
   }
-  
+
   .cd-divider {
     display: block;
   }
@@ -311,16 +311,16 @@ onMounted(() => {
     flex-direction: row;
     flex-wrap: wrap;
   }
-  
+
   .btn {
     flex: 1;
     min-width: 200px;
   }
-  
+
   .countdown {
     gap: 25px;
   }
-  
+
   .cd-divider {
     display: block;
   }
@@ -331,19 +331,19 @@ onMounted(() => {
   .hero-title {
     font-size: 36px;
   }
-  
+
   .hero-subtitle {
     font-size: 28px;
   }
-  
+
   .cd-value {
     font-size: 28px;
   }
-  
+
   .cd-label {
     font-size: 12px;
   }
-  
+
   .countdown {
     gap: 15px;
   }

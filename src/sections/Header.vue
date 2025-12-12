@@ -17,6 +17,7 @@
 </template>
 
 <script>
+// @review vue3 допускает использование options api, но лучше переписать на современный стиль - script setup
 export default {
   name: 'HeaderSED',
   methods: {
@@ -33,6 +34,7 @@ export default {
 </script>
 
 <style scoped>
+// @review свойство scoped делает изоляцию стилей у компонента, не стоит тут менять стили body - лучше вынести в глобальные стили
 body {
   background-color: black;
   margin: 0;

@@ -40,6 +40,17 @@
 </template>
 
 <script>
+/*
+@review
+здесь тоже лучше заменить на script setup, там можно использовать и options api, например
+<script setup>
+defineOptions({
+name: 'ConferenceFeatures'
+})
+</>
+Но здесь с name есть одна проблема. Сам компонент называется About.vue, а здесь идет переопределение этого свойства
+лучше переделать - ide будет проще похватывать
+ */
 export default {
   name: 'ConferenceFeatures',
 }

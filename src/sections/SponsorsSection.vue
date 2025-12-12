@@ -3,11 +3,7 @@
     <h2 class="title">Спонсоры и члены ассоциации</h2>
 
     <div class="grid">
-      <div
-        v-for="(logo, index) in logos"
-        :key="index"
-        class="logo-item"
-      >
+      <div v-for="(logo, index) in logos" :key="index" class="logo-item">
         <img :src="logo" alt="sponsor logo" />
       </div>
     </div>
@@ -26,7 +22,14 @@ import okdesk from '@/assets/sponsors/okdesk.png'
 import arvr from '@/assets/sponsors/arvr3d.png'
 import secon from '@/assets/sponsors/secon.png'
 import tortuga from '@/assets/sponsors/tortuga.png'
-
+/*
+@review
+С массивом картинок - хорошо, так делают
+Единственно что можно докуртить в шаблоне
+:key="index"
+тут лучше динамически дать как то
+:key="`${logo}-${new Date().toISOString().slice(0, 10)}`"
+ */
 // Добавь или убери лого — сетка подстроится автоматически
 const logos = [
   boggart,
@@ -39,7 +42,7 @@ const logos = [
   okdesk,
   arvr,
   secon,
-  tortuga
+  tortuga,
 ]
 </script>
 

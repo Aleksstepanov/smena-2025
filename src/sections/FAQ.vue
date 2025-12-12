@@ -11,6 +11,13 @@
 </template>
 
 <script>
+/*
+@review
+ну здесь тоже лучше переписать на script setup - так современнее
+faqItems - если это не динамические данные, то их надо перенести в обычную константу (не реактивную)
+По index в шаблоне, я бы сделал так
+ :key="`${index}-${new Date().toISOString().slice(0, 10)}`"
+ */
 export default {
   name: 'FaqSection',
   data() {
